@@ -52,4 +52,9 @@ router.get('/getAlertDetails', function(req, res, next) {
   res.end(JSON.stringify(response));
 });
 
+router.post('/savelocation', function(req, res, next) {
+    req.app.locals.io.emit('screenShot', req.body.imgData);
+    res.send({name : "test"})
+});
+
 module.exports = router;
